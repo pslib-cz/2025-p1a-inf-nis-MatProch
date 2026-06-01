@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specifikace projektu – RePlate</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #24292f;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            color: #000000;
+            border-bottom: 1px solid #d8dee4;
+            padding-bottom: 0.3em;
+        }
+        
+        h1 {
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 24px;
+        }
+
+        h3 {
+            font-size: 1.25em;
+            margin-top: 20px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        hr {
+            height: 0.25em;
+            padding: 0;
+            margin: 24px 0;
+            background-color: #d8dee4;
+            border: 0;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        table th,
+        table td {
+            padding: 6px 13px;
+            border: 1px solid #d0d7de;
+        }
+
+        table tr {
+            background-color: #ffffff;
+            border-top: 1px solid #hsla(210, 18%, 87%, 1);
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f6f8fa;
+        }
+
+        table th {
+            font-weight: 600;
+            background-color: #f6f8fa;
+        }
+
+        ul {
+            padding-left: 2em;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-top: 0.25em;
+        }
+
+        code {
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: #afb8c133;
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+    <body>
+    <img src="https://api.dicebear.com/9.x/shapes/svg?seed=left"
+     alt="Left SVG"
+     style="position:fixed; left:0; top:0; width:500px; height:100vh; object-fit:cover;">
+
+    <img src="https://api.dicebear.com/9.x/shapes/svg?seed=right"
+     alt="Right SVG"
+     style="position:fixed; right:0; top:0; width:500px; height:100vh; object-fit:cover;">
+    <h1>2025-p1a-inf-nis-MatProch</h1>
+    <p><em>2025-p1a-inf-nis-MatProch created by GitHub Classroom</em></p>
+    <h1>RePlate</h1>
+    <h2>O projektu</h2>
+    <p>RePlate je informační systém pro správu a redistribuci nevyužitých jídel ve školních jídelnách. Cílem systému je
+        snížit plýtvání potravinami tím, že umožní studentům rezervovat nevyzvednuté porce za zvýhodněnou cenu.</p>
+    <p>Systém propojuje studenty, zaměstnance jídelny a administrátory do jedné platformy, která zajišťuje přehlednou
+        evidenci jídel, rezervací a statistik potravinového odpadu.</p>
+    <hr>
+    <h2>Hlavní funkce</h2>
+    <ul>
+        
+        <li>evidence nevyzvednutých jídel</li>
+        <li>rezervace jídel studenty</li>
+        <li>správa kapacity a dostupnosti porcí</li>
+        <li>QR / PIN ověření při vyzvednutí</li>
+        <li>notifikace o dostupných porcích</li>
+        <li>historie objednávek</li>
+        <li>statistika zachráněných jídel</li>
+        <li>administrace uživatelů a systému</li>
+    </ul>
+    <hr>
+    <h2>Uživatelské role</h2>
+    <h3>Student</h3>
+    <ul>
+        <li>prohlížení dostupných jídel</li>
+        <li>rezervace porcí</li>
+        <li>zrušení rezervace</li>
+        <li>historie objednávek</li>
+        <li>příjem notifikací</li>
+    </ul>
+    <h3>Zaměstnanec jídelny</h3>
+    <ul>
+        <li>přidávání nevyužitých jídel</li>
+        <li>potvrzení vyzvednutí</li>
+        <li>správa dostupnosti jídel</li>
+    </ul>
+    <h3>Administrátor</h3>
+    <ul>
+        <li>správa uživatelů</li>
+        <li>správa systému</li>
+        <li>přístup ke statistikám</li>
+        <li>moderace obsahu</li>
+    </ul>
+    <hr>
+    <h2>Funkční požadavky</h2>
+    <ul>
+        <li>uživatel se musí být schopen přihlásit do systému</li>
+        <li>systém must umožnit rezervaci dostupného jídla</li>
+        <li>systém musí zabránit překročení kapacity porcí</li>
+        <li>systém musí evidovat historii rezervací</li>
+        <li>systém musí umožnit správu uživatelských rolí</li>
+        <li>systém musí generovat statistiky o zachráněných porcích</li>
+    </ul>
+    <hr>
+    <h2>Nefunkční požadavky</h2>
+    <ul>
+        <li>systém musí být dostupný 24/7</li>
+        <li>odezva systému nesmí překročit 2 sekundy</li>
+        <li>data uživatelů musí být zabezpečena</li>
+        <li>aplikace musí být responzivní pro mobilní zařízení</li>
+        <li>systém musí podporovat minimálně 500 současně přihlášených uživatelů</li>
+    </ul>
+    <hr>
+    <h2>Návrh databázových entit</h2>
+    <ul>
+        <li><code>User</li><li><code>Role</code></li>
+        <li><code>Meal</code></li>
+        <li><code>Reservation</code></li>
+        <li><code>Pickup</code></li>
+        <li><code>Notification</code></li>
+        <li><code>Statistics</code></li>
+    </ul>
+    <hr>
+    <h2>Použité technologie</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Vrstva</th>
+                <th>Technologie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Frontend</strong></td>
+                <td>React</td>
+            </tr>
+            <tr>
+                <td><strong>Backend</strong></td>
+                <td>Node.js / Express</td>
+            </tr>
+            <tr>
+                <td><strong>Databáze</strong></td>
+                <td>PostgreSQL</td>
+            </tr>
+            <tr>
+                <td><strong>Autentizace</strong></td>
+                <td>JWT</td>
+            </tr>
+            <tr>
+                <td><strong>API</strong></td>
+                <td>REST</td>
+            </tr>
+            <tr>
+                <td><strong>Nasazení</strong></td>
+                <td>Docker</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2>UML diagramy</h2>
+    <p>Projekt bude obsahovat:</p>
+    <ul>
+        <li>Use Case diagram</li>
+        <li>Activity diagram</li>
+        <li>Sequence diagram</li>
+        <li>Class diagram</li>
+        <li>ER diagram</li>
+        <li>Deployment diagram</li>
+    </ul>
+    <hr>
+    <h2>Cíl projektu</h2>
+    <p>Hlavním cílem projektu je vytvořit návrh moderního informačního systému, který pomůže omezit plýtvání potravinami
+        a zjednoduší správu redistribuce jídel ve školním prostředí.</p>
+    <hr>
+    <h2>Autoři</h2>
+    <ul>
+        <li>Matěj Procházka</li>
+    </ul>
+</body>
+
+</html></code>
