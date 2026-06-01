@@ -1,5 +1,7 @@
 # 2025-p1a-inf-nis-MatProch
 2025-p1a-inf-nis-MatProch created by GitHub Classroom
+https://pslib-cz.github.io/2025-p1a-inf-nis-MatProch/index.html
+
 # RePlate
 
 ## O projektu
@@ -8,6 +10,7 @@ RePlate je informační systém pro správu a redistribuci nevyužitých jídel 
 Cílem systému je snížit plýtvání potravinami tím, že umožní studentům rezervovat nevyzvednuté porce za zvýhodněnou cenu.
 
 Systém propojuje studenty, zaměstnance jídelny a administrátory do jedné platformy, která zajišťuje přehlednou evidenci jídel, rezervací a statistik potravinového odpadu.
+
 
 ---
 
