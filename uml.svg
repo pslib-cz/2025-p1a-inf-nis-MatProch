@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900">
+  <style>
+    .classBox {
+      fill: white;
+      stroke: black;
+      stroke-width: 2;
+    }
+    .title {
+      font-family: Arial;
+      font-size: 16px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+    .text {
+      font-family: Arial;
+      font-size: 13px;
+    }
+    .line {
+      stroke: black;
+      stroke-width: 2;
+    }
+  </style>
+
+  <!-- User -->
+  <rect x="50" y="50" width="250" height="180" class="classBox"></rect>
+  <line x1="50" y1="80" x2="300" y2="80" class="line"></line>
+  <text x="175" y="70" class="title">User</text>
+  <text x="60" y="105" class="text">+ id: UUID</text>
+  <text x="60" y="125" class="text">+ name: String</text>
+  <text x="60" y="145" class="text">+ email: String</text>
+  <text x="60" y="165" class="text">+ passwordHash: String</text>
+  <text x="60" y="185" class="text">+ roleId: UUID</text>
+  <text x="60" y="205" class="text">+ createdAt: Date</text>
+
+  <!-- Role -->
+  <rect x="450" y="50" width="220" height="120" class="classBox"></rect>
+  <line x1="450" y1="80" x2="670" y2="80" class="line"></line>
+  <text x="560" y="70" class="title">Role</text>
+  <text x="460" y="105" class="text">+ id: UUID</text>
+  <text x="460" y="125" class="text">+ name: String</text>
+  <text x="460" y="145" class="text">+ description: String</text>
+
+  <!-- Meal -->
+  <rect x="50" y="320" width="280" height="190" class="classBox"></rect>
+  <line x1="50" y1="350" x2="330" y2="350" class="line"></line>
+  <text x="190" y="340" class="title">Meal</text>
+  <text x="60" y="375" class="text">+ id: UUID</text>
+  <text x="60" y="395" class="text">+ name: String</text>
+  <text x="60" y="415" class="text">+ description: String</text>
+  <text x="60" y="435" class="text">+ price: Decimal</text>
+  <text x="60" y="455" class="text">+ quantity: Integer</text>
+  <text x="60" y="475" class="text">+ available: Boolean</text>
+  <text x="60" y="495" class="text">+ createdAt: Date</text>
+
+  <!-- Reservation -->
+  <rect x="500" y="300" width="300" height="220" class="classBox"></rect>
+  <line x1="500" y1="330" x2="800" y2="330" class="line"></line>
+  <text x="650" y="320" class="title">Reservation</text>
+  <text x="510" y="355" class="text">+ id: UUID</text>
+  <text x="510" y="375" class="text">+ userId: UUID</text>
+  <text x="510" y="395" class="text">+ mealId: UUID</text>
+  <text x="510" y="415" class="text">+ status: ReservationStatus</text>
+  <text x="510" y="435" class="text">+ reservationDate: DateTime</text>
+  <text x="510" y="455" class="text">+ qrCode: String</text>
+  <text x="510" y="475" class="text">+ pinCode: String</text>
+  <text x="510" y="495" class="text">+ pickupTime: DateTime</text>
+
+  <!-- Pickup -->
+  <rect x="950" y="300" width="250" height="170" class="classBox"></rect>
+  <line x1="950" y1="330" x2="1200" y2="330" class="line"></line>
+  <text x="1075" y="320" class="title">Pickup</text>
+  <text x="960" y="355" class="text">+ id: UUID</text>
+  <text x="960" y="375" class="text">+ reservationId: UUID</text>
+  <text x="960" y="395" class="text">+ pickupDate: DateTime</text>
+  <text x="960" y="415" class="text">+ verifiedBy: UUID</text>
+  <text x="960" y="435" class="text">+ method: QR/PIN</text>
+
+  <!-- Notification -->
+  <rect x="50" y="650" width="300" height="180" class="classBox"></rect>
+  <line x1="50" y1="680" x2="350" y2="680" class="line"></line>
+  <text x="200" y="670" class="title">Notification</text>
+  <text x="60" y="705" class="text">+ id: UUID</text>
+  <text x="60" y="725" class="text">+ userId: UUID</text>
+  <text x="60" y="745" class="text">+ title: String</text>
+  <text x="60" y="765" class="text">+ message: String</text>
+  <text x="60" y="785" class="text">+ read: Boolean</text>
+  <text x="60" y="805" class="text">+ createdAt: DateTime</text>
+
+  <!-- Statistics -->
+  <rect x="600" y="650" width="300" height="180" class="classBox"></rect>
+  <line x1="600" y1="680" x2="900" y2="680" class="line"></line>
+  <text x="750" y="670" class="title">Statistics</text>
+  <text x="610" y="705" class="text">+ id: UUID</text>
+  <text x="610" y="725" class="text">+ date: Date</text>
+  <text x="610" y="745" class="text">+ savedMeals: Integer</text>
+  <text x="610" y="765" class="text">+ wasteReduction: Decimal</text>
+  <text x="610" y="785" class="text">+ totalReservations: Integer</text>
+
+  <!-- Relationships -->
+
+  <!-- User -> Role -->
+  <line x1="300" y1="110" x2="450" y2="110" class="line"></line>
+  <text x="350" y="100" class="text">*..1</text>
+
+  <!-- User -> Reservation -->
+  <line x1="220" y1="230" x2="550" y2="300" class="line"></line>
+  <text x="360" y="250" class="text">1..*</text>
+
+  <!-- Meal -> Reservation -->
+  <line x1="330" y1="410" x2="500" y2="410" class="line"></line>
+  <text x="400" y="400" class="text">1..*</text>
+
+  <!-- Reservation -> Pickup -->
+  <line x1="800" y1="390" x2="950" y2="390" class="line"></line>
+  <text x="860" y="380" class="text">1..1</text>
+
+  <!-- User -> Notification -->
+  <line x1="150" y1="230" x2="150" y2="650" class="line"></line>
+  <text x="160" y="450" class="text">1..*</text>
+
+  <!-- Reservation -> Statistics -->
+  <line x1="650" y1="520" x2="750" y2="650" class="line"></line>
+  <text x="690" y="590" class="text">*</text>
+
+</svg>
